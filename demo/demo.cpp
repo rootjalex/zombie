@@ -45,7 +45,8 @@ void runWalkOnStars(const Scene& scene, const json& solverConfig, const json& ou
 
 	// initialize solver and estimate solution
 	ProgressBar pb(gridRes*gridRes);
-	std::function<void(int, int)> reportProgress = [&pb](int i, int tid) -> void { pb.report(i, tid); };
+	// std::function<void(int, int)> reportProgress = [&pb](int i, int tid) -> void { pb.report(i, tid); };
+	std::function<void(int, int)> reportProgress = {};
 
 	zombie::WalkSettings<float> walkSettings(0.0f, epsilonShell, minStarRadius,
 											 silhouettePrecision, russianRouletteThreshold,
